@@ -17,10 +17,10 @@ app.use("/api/images", imageRoutes);
 
 // connect & start
 const PORT = process.env.PORT || 5000;
-console.log("MONGO_URI from .env:", JSON.stringify(process.env.MONGO_URI));
+console.log("MONGO_URL from .env:", JSON.stringify(process.env.MONGO_URL));
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("✅ MongoDB connected");
     console.log("📦 Connected to DB:", mongoose.connection.db.databaseName);
