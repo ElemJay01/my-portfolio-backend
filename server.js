@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173" })); // change origin if front is elsewhere
+// app.use(cors({ origin: "http://localhost:5173" })); // change origin if front is elsewhere
+app.use(cors()); // change origin if front is elsewhere
 app.use(express.json());
 
 // ROUTES
