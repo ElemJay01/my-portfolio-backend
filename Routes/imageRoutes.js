@@ -6,7 +6,7 @@ const router = express.Router();
 // GET /api/images - fetch all images
 router.get("/", async (req, res) => {
   try {
-    const images = await Image.find();
+    const images = (await Image.find()).sort({ createdAt: -1 });
     res.json(images);
   } catch (error) {
     res.status(500).json({ message: error.message });
